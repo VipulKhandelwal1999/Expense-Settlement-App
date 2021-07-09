@@ -10,8 +10,8 @@ const AllNamesContainer = ({ allNames }) => {
           {item.name.toUpperCase()}
         </h4>
       ))}
-      <Link to="/add-transactions">
-        <button>ADD TRANSACTIONS</button>
+      <Link to='/add-transactions'>
+        <button className={styles.button}>ADD TRANSACTIONS</button>
       </Link>
     </div>
   );

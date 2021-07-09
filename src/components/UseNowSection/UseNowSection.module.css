@@ -29,9 +29,11 @@
 .content__container__header__heading {
   color: rgba(84, 58, 183, 1);
 }
+
 .submit-button {
   cursor: pointer;
 }
+
 .form-field {
   display: block;
   width: 100%;

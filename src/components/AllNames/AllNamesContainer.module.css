@@ -1,3 +1,21 @@
 .heading {
   color: rgba(84, 58, 183, 1);
 }
+
+.button {
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(84, 58, 183, 1);
+  color: #fff;
+}

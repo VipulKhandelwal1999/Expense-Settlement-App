@@ -1,14 +1,7 @@
-import { useState } from 'react';
 import styles from './UseNowSection.module.css';
 import AllNamesContainer from '../AllNames/AllNamesContainer';
-const UseNowSection = () => {
-  const [name, setName] = useState('');
-  const [allNames, setAllNames] = useState('');
-  const addParticipant = () => {
-    setAllNames((previous) => [...previous, { name }]);
-    setName('');
-  };
 
+const UseNowSection = ({name, setName, allNames, addParticipant}) => {
   return (
     <div className={styles.container}>
       <div className={styles.content__container}>
@@ -28,7 +21,9 @@ const UseNowSection = () => {
             </span>
           </div>
         </div>
-        {allNames && <AllNamesContainer allNames={allNames} />}
+        {allNames && allNames.length > 0 && (
+          <AllNamesContainer allNames={allNames} />
+        )}
       </div>
     </div>
   );
