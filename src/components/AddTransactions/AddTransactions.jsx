@@ -10,7 +10,8 @@ const AddTransactions = ({
   amount,
   setAmount,
   allTransactions,
-  setAllTransactions,
+  splitwiseTransactions,
+  buildGraph
 }) => {
   return (
     <div className={styles.container}>
@@ -75,7 +76,11 @@ const AddTransactions = ({
           </form>
         </div>
         {allTransactions && allTransactions.length > 0 && (
-          <TableComponent allTransactions={allTransactions} />
+          <TableComponent
+            allTransactions={allTransactions}
+            splitwiseTransactions={splitwiseTransactions}
+            buildGraph={buildGraph}
+          />
         )}
       </div>
     </div>

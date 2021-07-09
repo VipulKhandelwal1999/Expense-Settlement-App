@@ -1,45 +1,24 @@
 import styles from './TableComponent.module.css';
+import TableContainer from '../TableContainer/TableContainer';
 
-const TableComponent = ({ allTransactions }) => {
+const TableComponent = ({
+  allTransactions,
+  splitwiseTransactions,
+  buildGraph,
+}) => {
   return (
     <div className={styles.table__background}>
       <section className={styles.section}>
         <h1 className={styles.h1}>ALL TRANSACTIONS</h1>
-        <div className={styles['tbl-header']}>
-          <table
-            className={styles.table}
-            cellPadding='0'
-            cellSpacing='0'
-            border='0'
-          >
-            <thead>
-              <tr className={styles.tr}>
-                <th className={styles.th}>PAYER</th>
-                <th className={styles.th}>PAYEE</th>
-                <th className={styles.th}>AMOUNT</th>
-              </tr>
-            </thead>
-          </table>
+        <div className={styles['button__container']}>
+          <button className={styles.button} onClick={buildGraph}>
+            BUILD GRAPH
+          </button>
+          <button className={styles.button} onClick={splitwiseTransactions}>
+            SIMPLIFY SETTLEMENTS
+          </button>
         </div>
-        <div className={styles['tbl-content']}>
-          <table
-            className={styles.table}
-            cellPadding='0'
-            cellSpacing='0'
-            border='0'
-          >
-            <tbody>
-              {allTransactions.map(({ payer, payee, amount }, index) => (
-                <tr key={index}>
-                  <td className={styles.td}>{payer}</td>
-                  <td className={styles.td}>{payee}</td>
-                  <td className={styles.td}>{amount}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div className={styles.spacing}></div>
+        <TableContainer allTransactions={allTransactions} />
       </section>
     </div>
   );
