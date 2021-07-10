@@ -4,21 +4,24 @@ import TableContainer from '../TableContainer/TableContainer';
 const TableComponent = ({
   allTransactions,
   splitwiseTransactions,
-  buildGraph,
+  outputList,
+  flag,
+  finalTransactions,
 }) => {
   return (
     <div className={styles.table__background}>
       <section className={styles.section}>
-        <h1 className={styles.h1}>ALL TRANSACTIONS</h1>
+        {flag && <h1 className={styles.h1}>ALL TRANSACTIONS</h1>}
+        {!flag && <h1 className={styles.h1}>SIMPLIFIED TRANSACTIONS</h1>}
         <div className={styles['button__container']}>
-          <button className={styles.button} onClick={buildGraph}>
-            BUILD GRAPH
-          </button>
-          <button className={styles.button} onClick={splitwiseTransactions}>
-            SIMPLIFY SETTLEMENTS
-          </button>
+          {outputList && outputList.length === 0 && (
+            <button className={styles.button} onClick={splitwiseTransactions}>
+              SIMPLIFY SETTLEMENTS
+            </button>
+          )}
         </div>
-        <TableContainer allTransactions={allTransactions} />
+        {flag && <TableContainer allTransactions={allTransactions} />}
+        {!flag && <TableContainer allTransactions={finalTransactions} />}
       </section>
     </div>
   );

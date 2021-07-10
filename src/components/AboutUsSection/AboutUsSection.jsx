@@ -2,7 +2,7 @@ import styles from './AboutUsSection.module.css';
 
 const AboutUsSection = () => {
     return (
-        <div>
+        <div className={styles.header}>
             ABOUT US
         </div>
     )

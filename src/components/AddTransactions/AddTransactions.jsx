@@ -11,7 +11,10 @@ const AddTransactions = ({
   setAmount,
   allTransactions,
   splitwiseTransactions,
-  buildGraph
+  inputList,
+  outputList,
+  flag,
+  finalTransactions,
 }) => {
   return (
     <div className={styles.container}>
@@ -79,7 +82,10 @@ const AddTransactions = ({
           <TableComponent
             allTransactions={allTransactions}
             splitwiseTransactions={splitwiseTransactions}
-            buildGraph={buildGraph}
+            inputList={inputList}
+            outputList={outputList}
+            flag={flag}
+            finalTransactions={finalTransactions}
           />
         )}
       </div>

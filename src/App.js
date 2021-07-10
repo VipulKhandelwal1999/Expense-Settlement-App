@@ -14,12 +14,16 @@ const App = () => {
   const [payee, setPayee] = useState('Choose Payee');
   const [amount, setAmount] = useState('');
   const [allTransactions, setAllTransactions] = useState([]);
-  const [output, setOutputList] = useState([]);
+  const [finalTransactions, setFinalTransactions] = useState([]);
+  const [outputList, setOutputList] = useState([]);
+  const [inputList, setInputList] = useState([]);
+  const [flag, setFlag] = useState(true);
 
   const addParticipant = () => {
     setAllNames((previous) => [...previous, { name }]);
     setName('');
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setAllTransactions((previous) => {
@@ -29,22 +33,22 @@ const App = () => {
     setPayee('');
     setAmount('');
   };
-  
+
   const splitwiseTransactions = () => {
     const input = [];
     for (let item of allTransactions) {
-      input.push(
-        new Expense(item.payer, item.payee, parseInt(item.amount))
-      );
+      input.push(new Expense(item.payer, item.payee, parseInt(item.amount)));
     }
+    setInputList(input);
     const output = splitwise(input);
-    console.log('output: ', output);
     setOutputList(output);
+    setFinalTransactions(() =>
+      output.map((x) => {
+        return { payer: x.person1, payee: x.person2, amount: x.amount };
+      })
+    );
+    setFlag(false);
   };
-
-  const buildGraph = () => {
-
-  }
 
   return (
     <Router>
@@ -70,7 +74,10 @@ const App = () => {
           setAmount={setAmount}
           allTransactions={allTransactions}
           splitwiseTransactions={splitwiseTransactions}
-          buildGraph={buildGraph}
+          inputList={inputList}
+          outputList={outputList}
+          flag={flag}
+          finalTransactions={finalTransactions}
         />
       </Route>
     </Router>
