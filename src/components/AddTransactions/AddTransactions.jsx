@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './AddTransactions.module.css';
 import TableComponent from '../TableComponent/TableComponent';
+import Navbar from '../Navbar/Navbar';
+
 const AddTransactions = ({
   allNames,
   handleSubmit,
@@ -16,8 +20,15 @@ const AddTransactions = ({
   flag,
   finalTransactions,
 }) => {
+  let history = useHistory();
+  useEffect(() => {
+    if(allNames.length===0){
+      history.push("/");
+    }
+  }, [allNames, history]);
   return (
     <div className={styles.container}>
+      <Navbar />
       <div className={styles.content__container}>
         <div className={styles.add__transactions__details__container}>
           <h3 className={styles.content__container__header__heading}>

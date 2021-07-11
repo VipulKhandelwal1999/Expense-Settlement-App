@@ -85,3 +85,8 @@
   color: #fff;
   cursor: pointer;
 }
+
+.table__container{
+  display: grid;
+  grid-template-columns: 1fr;
+}

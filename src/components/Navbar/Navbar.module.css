@@ -1,0 +1,30 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background: black;
+  
+  font-family: Helvetica;
+  font-weight: 300;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar__title {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 16px;
+}
+
+.navbar__item {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.links{
+  color: white;
+  text-decoration: none;
+}

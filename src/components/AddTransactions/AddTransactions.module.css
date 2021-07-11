@@ -8,6 +8,7 @@
   color: white;
   min-height: 100vh;
   padding: 5rem;
+  padding-top: 2.5rem;
 }
 
 .content__container {
@@ -173,4 +174,3 @@ select {
   background: var(--group-background-focus);
   border-color: var(--group-border-focus);
 }
-

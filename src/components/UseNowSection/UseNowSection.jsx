@@ -1,9 +1,10 @@
 import styles from './UseNowSection.module.css';
 import AllNamesContainer from '../AllNames/AllNamesContainer';
-
+import Navbar from '../Navbar/Navbar';
 const UseNowSection = ({name, setName, allNames, addParticipant}) => {
   return (
     <div className={styles.container}>
+      <Navbar />
       <div className={styles.content__container}>
         <div className={styles.content__container__header}>
           <h2 className={styles.content__container__header__heading}>

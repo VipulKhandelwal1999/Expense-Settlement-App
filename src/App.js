@@ -52,7 +52,9 @@ const App = () => {
 
   return (
     <Router>
-      <Route exact path='/' component={HeroSection} />
+      <Route exact path='/'>
+        <HeroSection/>
+      </Route>
       <Route exact path='/use-now'>
         <UseNowSection
           name={name}
