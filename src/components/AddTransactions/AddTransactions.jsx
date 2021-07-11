@@ -19,11 +19,13 @@ const AddTransactions = ({
   outputList,
   flag,
   finalTransactions,
+  graphData,
+  graphConfig,
 }) => {
   let history = useHistory();
   useEffect(() => {
-    if(allNames.length===0){
-      history.push("/");
+    if (allNames.length === 0) {
+      history.push('/');
     }
   }, [allNames, history]);
   return (
@@ -97,6 +99,8 @@ const AddTransactions = ({
             outputList={outputList}
             flag={flag}
             finalTransactions={finalTransactions}
+            graphData={graphData}
+            graphConfig={graphConfig}
           />
         )}
       </div>

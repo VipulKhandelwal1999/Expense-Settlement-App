@@ -18,6 +18,8 @@ const App = () => {
   const [outputList, setOutputList] = useState([]);
   const [inputList, setInputList] = useState([]);
   const [flag, setFlag] = useState(true);
+  const [graphData, setGraphData] = useState({});
+  const [graphConfig, setGraphConfig] = useState({});
 
   const addParticipant = () => {
     setAllNames((previous) => [...previous, { name }]);
@@ -48,6 +50,7 @@ const App = () => {
       })
     );
     setFlag(false);
+    setGraphData(output);
   };
 
   return (
@@ -80,6 +83,8 @@ const App = () => {
           outputList={outputList}
           flag={flag}
           finalTransactions={finalTransactions}
+          graphData={graphData}
+          graphConfig={graphConfig}
         />
       </Route>
     </Router>
