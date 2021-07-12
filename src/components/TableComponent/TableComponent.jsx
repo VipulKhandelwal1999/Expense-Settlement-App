@@ -9,7 +9,6 @@ const TableComponent = ({
   flag,
   finalTransactions,
   graphData,
-  graphConfig,
 }) => {
   return (
     <div className={styles.table__background}>
@@ -23,19 +22,18 @@ const TableComponent = ({
             </button>
           )}
         </div>
-        <div className={styles.table__container}>
+        <div className={!flag ? styles.table__container: ""}>
           <div>
             {flag && <TableContainer allTransactions={allTransactions} />}
             {!flag && <TableContainer allTransactions={finalTransactions} />}
           </div>
-          <div className={styles.graph__container}>
-            <button className={styles.button} onClick={splitwiseTransactions}>
-              SIMPLIFY SETTLEMENTS
-            </button>
-            {graphData && graphData.length > 0 && (
-              <Graph graphData={graphData} graphConfig={graphConfig} />
-            )}
-          </div>
+          {!flag && (
+            <div className={styles.graph__container}>
+              {graphData && graphData.length > 0 && (
+                <Graph graphData={graphData} />
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>

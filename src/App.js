@@ -1,6 +1,6 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HeroSection from './components/HeroSection/HeroSection';
-import { useState } from 'react';
 import UseNowSection from './components/UseNowSection/UseNowSection';
 import AboutUsSection from './components/AboutUsSection/AboutUsSection';
 import AddTransactions from './components/AddTransactions/AddTransactions';
@@ -19,8 +19,20 @@ const App = () => {
   const [inputList, setInputList] = useState([]);
   const [flag, setFlag] = useState(true);
   const [graphData, setGraphData] = useState({});
-  const [graphConfig, setGraphConfig] = useState({});
 
+  const resetState = () => {
+    setName('');
+    setAllNames([]);
+    setPayer('Choose Payer');
+    setPayee('Choose Payee');
+    setAmount('');
+    setAllTransactions([]);
+    setFinalTransactions([]);
+    setOutputList([]);
+    setInputList([]);
+    setFlag(true);
+    setGraphData({});
+  };
   const addParticipant = () => {
     setAllNames((previous) => [...previous, { name }]);
     setName('');
@@ -56,7 +68,7 @@ const App = () => {
   return (
     <Router>
       <Route exact path='/'>
-        <HeroSection/>
+        <HeroSection resetState={resetState}/>
       </Route>
       <Route exact path='/use-now'>
         <UseNowSection
@@ -84,7 +96,6 @@ const App = () => {
           flag={flag}
           finalTransactions={finalTransactions}
           graphData={graphData}
-          graphConfig={graphConfig}
         />
       </Route>
     </Router>

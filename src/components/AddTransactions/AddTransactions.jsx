@@ -20,7 +20,6 @@ const AddTransactions = ({
   flag,
   finalTransactions,
   graphData,
-  graphConfig,
 }) => {
   let history = useHistory();
   useEffect(() => {
@@ -100,7 +99,6 @@ const AddTransactions = ({
             flag={flag}
             finalTransactions={finalTransactions}
             graphData={graphData}
-            graphConfig={graphConfig}
           />
         )}
       </div>

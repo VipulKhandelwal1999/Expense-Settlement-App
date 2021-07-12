@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './HeroSection.module.css';
 import logo from '../../images/rupee.png';
 
-const HeroSection = () => {
+const HeroSection = ({ resetState }) => {
   return (
     <div className={styles.header}>
       <div className={`${styles['inner-header']}`}>
@@ -14,10 +14,20 @@ const HeroSection = () => {
         </div>
         <div className={styles['button-container']}>
           <Link to='/use-now' className={styles.links}>
-            <div className={`${styles.button} ${styles.regular}`}>USE NOW</div>
+            <div
+              className={`${styles.button} ${styles.regular}`}
+              onClick={resetState}
+            >
+              USE NOW
+            </div>
           </Link>
           <Link to='/about-us' className={styles.links}>
-            <div className={`${styles.button} ${styles.regular}`}>ABOUT US</div>
+            <div
+              className={`${styles.button} ${styles.regular}`}
+              onClick={resetState}
+            >
+              ABOUT US
+            </div>
           </Link>
         </div>
       </div>

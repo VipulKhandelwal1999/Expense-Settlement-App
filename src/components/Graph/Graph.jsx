@@ -2,13 +2,13 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import styles from './Graph.module.css';
 
-const Graph = ({ graphData, graphConfig }) => {
+const Graph = ({ graphData}) => {
   const data = {
-    labels: graphData.map(x => x.person1),
+    labels: graphData.map((x) => x.person1),
     datasets: [
       {
         label: 'How Much They Owe',
-        data: [12, 19, 3, 5, 2, 3],
+        data: graphData.map((x) => x.amount),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -31,7 +31,6 @@ const Graph = ({ graphData, graphConfig }) => {
   };
   return (
     <div className={styles.graph__container}>
-      
       <Doughnut
         data={data}
         width={90}
