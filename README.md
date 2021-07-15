@@ -6,9 +6,9 @@ Expense Settlement App is a free tool for friends and roommates to track bills a
 
 ![screenshot](https://github.com/VipulKhandelwal1999/Expense-Settlement-App/blob/master/src/images/home_screen.png)
 
-![screenshot]()
+![screenshot](https://github.com/VipulKhandelwal1999/Expense-Settlement-App/blob/master/src/images/table.png)
 
-![screenshot]()
+![screenshot](https://github.com/VipulKhandelwal1999/Expense-Settlement-App/blob/master/src/images/simplified_table.png)
 
 ---
 
