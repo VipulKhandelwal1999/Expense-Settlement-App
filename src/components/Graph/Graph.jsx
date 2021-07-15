@@ -2,7 +2,7 @@ import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import styles from './Graph.module.css';
 
-const Graph = ({ graphData}) => {
+const Graph = ({ graphData }) => {
   const data = {
     labels: graphData.map((x) => x.person1),
     datasets: [
@@ -31,11 +31,14 @@ const Graph = ({ graphData}) => {
   };
   return (
     <div className={styles.graph__container}>
-      <Doughnut
-        data={data}
-        width={90}
-        options={{ maintainAspectRatio: false }}
-      />
+      <div className={styles.graph__heading}>How Much Do A Person Owe?</div>
+      <div className={styles.graph}>
+        <Doughnut
+          data={data}
+          width={200}
+          options={{ maintainAspectRatio: false }}
+        />
+      </div>
     </div>
   );
 };

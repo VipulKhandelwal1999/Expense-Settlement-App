@@ -4,3 +4,15 @@
   background-color: #fff;
   padding: 1rem;
 }
+
+.graph__heading{
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.graph{
+  height: 90%;
+  padding: 1rem;
+  object-fit: contain;
+  overflow: hidden;
+}
